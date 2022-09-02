@@ -1,6 +1,8 @@
 # sort a list of strings (a-z) ignore ties (aab == aac even though thats wrong)
 # crash if the string contains 1234567890!@#$%^&*()_-+=[]{}:;'"?/<>,.~`\|
 
+# handling ties requires extra looping and logic so I did not implement it
+
 char_to_int = {
     "a": 1,
     "b": 2,
@@ -54,6 +56,7 @@ while not sorted:
     smallest_names_number = 99999 # place holder
     smallest_name = "place holder"
     for name in example_names:
+        # number from the first character in the name
         names_number = char_to_int[name[0]]
 
         if names_number < smallest_names_number:
@@ -69,3 +72,4 @@ while not sorted:
         sorted = True
 
 print(sorted_list)
+
